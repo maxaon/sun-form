@@ -7,7 +7,6 @@ angular.module 'sun.form.simple-input', [
   'pascalprecht.translate'
   'ui.router'
   'ngMessages'
-  'sun.form.simple-input.date'
   'sun.form.form-group'
 ]
 .provider 'SimpleInputOptions', ->
@@ -16,9 +15,6 @@ angular.module 'sun.form.simple-input', [
   options.inputs =
     select  :
       templateUrl: 'select.tpl.html'
-    date    :
-      controller : 'SimpleInputDateController'
-      templateUrl: 'date.tpl.html'
     textarea:
       templateUrl: 'textarea.tpl.html'
     checkbox:
