@@ -1,0 +1,12 @@
+form(name="innerForm",ng-submit="options._form_submit()")
+  alert(type="{{ options.msg.type || 'danger' }}", ng-show="options.msg.show", close="options.msg.show=false")
+    h4(ng-show="options.msg.title") {{options.msg.title | translate}}
+    span {{options.msg.text}}
+  ng-transclude
+  .btn-group.form-buttons.pull-right(ng-show="options.buttons")
+    button(ng-repeat='button in options.buttons',
+      type="{{button.type || 'button'}}",
+      ng-class="getButtonClass(button)",
+      ng-click="options._clicked(button)",
+      translate="{{button.label}}")
+  .clearfix

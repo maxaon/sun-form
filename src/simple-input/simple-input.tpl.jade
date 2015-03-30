@@ -1,0 +1,8 @@
+div.form-group(ng-class="{ 'has-error': showError()}")
+  label.control-label(for='{{id}}')
+    | {{label  | translate }}
+  div
+    div(inner-content="")
+    div.help-block(ng-show="showError()",ng-messages="inputCtrl.$error", ng-messages-include="defaultFormErrorMessages")
+      ng-message(ng-repeat="message in messages",when="{{message.when}}") {{message.message}}
+    span.help-block(ng-show="helpText") {{ helpText|translate }}

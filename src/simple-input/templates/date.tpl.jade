@@ -1,0 +1,8 @@
+span.input-group
+  input.form-control(id="{{id}}", name='{{name}}', ng-model='ngModel',
+  type='text', placeholder='{{label | translate}}'
+  datepicker-popup="{{format}}", is-open="opened"
+  )
+  span.input-group-btn
+    button.btn.btn-default(type="button",ng-click="open($event)")
+      i.fa.fa-calendar
